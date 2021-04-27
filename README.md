@@ -22,6 +22,11 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " let g:mdip_imgname = 'image'
 ```
 
+### For OSX user
+This plugin gets clipboard content by running the `pngpaste` command.
+
+`brew install pngpaste` first.
+
 ### For linux user
 This plugin gets clipboard content by running the `xclip` command.
 

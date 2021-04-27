@@ -94,11 +94,7 @@ endfunction
 
 function! s:SaveFileTMPMacOS(imgdir, tmpname) abort
     let tmpfile = a:imgdir . '/' . a:tmpname . '.png'
-    let clip_command = 'osascript'
-    let clip_command .= ' -e "set png_data to the clipboard as «class PNGf»"'
-    let clip_command .= ' -e "set referenceNumber to open for access POSIX path of'
-    let clip_command .= ' (POSIX file \"' . tmpfile . '\") with write permission"'
-    let clip_command .= ' -e "write png_data to referenceNumber"'
+    let clip_command = "pngpaste " . tmpfile
 
     silent call system(clip_command)
     if v:shell_error == 1
